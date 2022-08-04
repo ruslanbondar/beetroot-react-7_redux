@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 
-import RecipeSlide from './RecipeSlide';
+import RecipeSlide, { test } from './RecipeSlide';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -33,9 +33,9 @@ const options = {
 };
 
 function SliderComponent() {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = React.useState([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetch(
       'https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes',
       options,

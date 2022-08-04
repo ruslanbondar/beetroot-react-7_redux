@@ -11,4 +11,6 @@ function RecipeSlide({ recipe, renderTitle = false }) {
   );
 }
 
+export const test = 5;
+
 export default RecipeSlide;
