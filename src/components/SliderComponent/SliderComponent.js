@@ -32,7 +32,7 @@ const options = {
   },
 };
 
-function SliderComponent() {
+export function SliderComponent() {
   const [recipes, setRecipes] = React.useState([]);
 
   React.useEffect(() => {
@@ -62,4 +62,4 @@ function SliderComponent() {
   );
 }
 
-export default SliderComponent;
+// export default SliderComponent;

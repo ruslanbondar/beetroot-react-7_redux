@@ -5,8 +5,18 @@ const commentsSlice = createSlice({
   name: 'comments',
   initialState: {
     comments: [],
+    likedComments: [],
     loading: false,
     error: null,
+  },
+  reducers: {
+    addToFav: (state, action) => {
+      state.likedComments.push(action.payload);
+      localStorage.setItem('fav', JSON.stringify(state.likedComments));
+    },
+    setFavComments: (state, action) => {
+      state.likedComments = action.payload;
+    },
   },
   extraReducers: {
     [fetchComments.fulfilled]: (state, action) => {
@@ -24,6 +34,7 @@ const commentsSlice = createSlice({
 });
 
 export default commentsSlice.reducer;
+export const { setFavComments } = commentsSlice.actions;
 
 // const obj = { a: 1, 'a b c': 2 };
 // console.log(obj['a b c']);
